@@ -19,12 +19,15 @@ segment .text
 asm_main:
         enter   0,0               ; setup routine
         pusha
+        xor eax,eax
         mov ax,0xc123
         shl ax,1
         shr ax,1
         shr ax,1
         mov ax,0xc123
+b1:
         shl ax,2
+b2:
         mov cl,3
         shr ax,cl
 

@@ -49,18 +49,21 @@
     49                                  asm_main:
     50 00000000 C8000000                        enter   0,0               ; setup routine
     51 00000004 60                              pusha
-    52 00000005 66B823C1                        mov ax,0xc123
-    53 00000009 66D1E0                          shl ax,1
-    54 0000000C 66D1E8                          shr ax,1
-    55 0000000F 66D1E8                          shr ax,1
-    56 00000012 66B823C1                        mov ax,0xc123
-    57 00000016 66C1E002                        shl ax,2
-    58 0000001A B103                            mov cl,3
-    59 0000001C 66D3E8                          shr ax,cl
-    60                                  
-    61 0000001F 61                              popa
-    62 00000020 B800000000                      mov     eax, 0            ; return back to C
-    63 00000025 C9                              leave                     
-    64 00000026 C3                              ret
-    65                                  
-    66                                  
+    52 00000005 31C0                            xor eax,eax
+    53 00000007 66B823C1                        mov ax,0xc123
+    54 0000000B 66D1E0                          shl ax,1
+    55 0000000E 66D1E8                          shr ax,1
+    56 00000011 66D1E8                          shr ax,1
+    57 00000014 66B823C1                        mov ax,0xc123
+    58                                  b1:
+    59 00000018 66C1E002                        shl ax,2
+    60                                  b2:
+    61 0000001C B103                            mov cl,3
+    62 0000001E 66D3E8                          shr ax,cl
+    63                                  
+    64 00000021 61                              popa
+    65 00000022 B800000000                      mov     eax, 0            ; return back to C
+    66 00000027 C9                              leave                     
+    67 00000028 C3                              ret
+    68                                  
+    69                                  

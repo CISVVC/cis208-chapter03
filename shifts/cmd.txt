@@ -1,0 +1,10 @@
+b b1
+b b2
+list 28,33
+r
+echo "The value of ax at breakpoint b1"
+p/t $ax
+
+c
+echo "The value of ax at breakpoint b2"
+p/t $ax
