@@ -1,11 +1,13 @@
 b b1
 b b2
-list 28,33
 r
+echo "After a NOT operation:\n"
 echo "The value of ax at breakpoint b1\n"
 p/t $ax
+i r eflags
 c
 echo "The value of ax at breakpoint b2\n"
 p/t $ax
+i r eflags
 c
 quit

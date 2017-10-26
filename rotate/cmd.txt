@@ -1,0 +1,26 @@
+b b1
+b b2
+b b3
+b b4
+b b5
+r
+echo "The value of ax at breakpoint b1\n"
+p/t $ax
+i r eflags
+c
+echo "The value of ax at breakpoint b2\n"
+p/t $ax
+i r eflags
+c
+echo "The value of ax at breakpoint b3\n"
+p/t $ax
+i r eflags
+c
+echo "The value of ax at breakpoint b4\n"
+p/t $ax
+i r eflags
+c
+echo "The value of ax at breakpoint b5\n"
+p/t $ax
+c
+quit
